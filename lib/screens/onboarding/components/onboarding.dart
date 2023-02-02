@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/screens/onboarding/components/content_boarding.dart';
+import 'package:flutter_application_1/screens/onboarding/components/content_page.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -39,9 +40,17 @@ class _OnboardingState extends State<Onboarding> {
           ),
         ),
         Expanded(
-          child: Text('Hola expandend 2'),
           flex: 2,
-        )
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                    boardingData.length, (index) => page(index, currentPage)),
+              ),
+            ],
+          ),
+        ),
       ],
     ));
   }

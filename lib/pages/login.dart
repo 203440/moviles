@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/register.dart';
+import 'package:flutter_application_1/screens/onboarding/body_boarding2.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -64,7 +65,16 @@ class Login extends StatelessWidget {
                               builder: (context) => const Register()),
                         );
                       },
-                      child: const Text('Registrar'))
+                      child: const Text('Registrar')),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const BodyBoarding2()),
+                        );
+                      },
+                      child: const Text('Ir A Veterinaria'))
                 ],
               ));
             }),
